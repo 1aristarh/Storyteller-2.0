@@ -2,20 +2,26 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Storyteller_2._0.Data;
+using Storyteller_2._0.Data.Services;
+using Storyteller_2._0.Models;
 
 namespace Storyteller_2._0.Controllers
 {
     public class ComicsController : Controller
     {
-        private readonly AppDbContext _context;
-        public ComicsController(AppDbContext context)
+        private readonly IComicsService _service;
+        public ComicsController(IComicsService service)
         {
-            _context = context;
+            _service = service;
         }
         public async Task<IActionResult> Index()
         {
-            var data = await _context.Comics.ToListAsync();
+            var data =await _service.GetAll();
             return View(data);
+        } 
+        public async Task<IActionResult> Create()
+        {
+            return View();
         }
     }
 }

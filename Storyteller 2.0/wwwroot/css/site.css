@@ -1,18 +1,90 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+@media (min-width: 100px) {
+    html {
+        font-size: 16px;
+    }
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    color: white;
+}
+
+    .topnav a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+
+        .topnav a:hover {
+            background-color: #666666;
+            color: white;
+        }
+
+        .topnav a.active {
+            background-color: #e3e3e3;
+            color: black;
+        }
+
+.cont {
+    margin-top: 10%;
+    align-self: center;
+}
+
+.containerb {
+    margin-top: 5%;
+    margin-left: 40%;
+    margin-right: 30%;
+    margin-bottom: 20%
 }
 
 body {
-  margin-bottom: 60px;
+    background-image: url(https://images3.alphacoders.com/883/883945.jpg);
 }
+
+.img {
+    max-width: auto
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.idk {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+}
+
+idk :hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.container {
+    max-width:200px;
+}
+.title{
+    padding-top:100px;
+    padding-left:300px;
+}
+

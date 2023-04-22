@@ -10,7 +10,7 @@
 <header>
     <div class="topnav">
         <a href="Home">Home</a>
-        <a class="active" href="Comic">Comic</a>
+        <a class="active" href="Comics">Comics</a>
         <a href="Page">Pages</a>
     </div>
 </header
@@ -19,18 +19,13 @@
     <div class="container">
         <div class="card mb-4 box-shadow">
             <div class="card-body">
-                <p class="card-title">@item.Name</p>
-                <p class="card-text">@item.Genre</p>
-                <p class="card-text">@item.Type</p>
-                <p class="card-text">@item.Pages</p>
-                <p class="card-text">@item.Size</p>
-                <p class="card-text">@item.Description</p>
+                <p class="card-title">Title:@item.Name</p>
+                <p class="card-text">Pages:@item.PageCount</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                        <button type="button" class="detailbtn btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="pagesbtn btn btn-sm btn-outline-secondary">Edit</button>
                     </div>
-                    <small class="text-muted">9 mins</small>
                 </div>
             </div>
         </div>
