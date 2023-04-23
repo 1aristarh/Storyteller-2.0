@@ -4,10 +4,10 @@ namespace Storyteller_2._0.Data.Services
 {
     public interface IComicsService
     {
-        Task<IEnumerable<Comic>> GetAll();
-        Comic GetbyId(int id);
-        void Add(Comic comic);
-        Comic Update(int id,Comic newComic);
-        void Delete(int id);
+        Task<IEnumerable<Comic>> GetAllAsync();
+        Task<Comic> GetbyIdAsync(int id);
+        Task AddAsync(Comic comic);
+        Task <Comic> UpdateAsync(int id,Comic newComic);
+        Task DeleteAsync(int id);
     }
 }

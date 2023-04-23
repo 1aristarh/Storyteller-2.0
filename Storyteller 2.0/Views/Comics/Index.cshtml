@@ -13,21 +13,28 @@
         <a class="active" href="Comics">Comics</a>
         <a href="Page">Pages</a>
     </div>
-</header
+</header>
+<div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
 @foreach (var item in Model)
 {
-    <div class="container">
-        <div class="card mb-4 box-shadow">
+        <div class="card mb-4 box-shadow mostrakardo">
             <div class="card-body">
                 <p class="card-title">Title:@item.Name</p>
                 <p class="card-text">Pages:@item.PageCount</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                         <button type="button" class="detailbtn btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="pagesbtn btn btn-sm btn-outline-secondary">Edit</button>
+                        <a type="button" class="pagesbtn btn btn-sm btn-outline-secondary "asp-controller="Comics" asp-action="Details" asp-route-id="@item.Id"> Edit</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 }
+</div>
+</div>
+</div>
+ <div style="position:fixed; right:25px;bottom:25px;">
+<a asp-controller="Comics" asp-action="Create" class="btn idk">Create</a>
+</div>

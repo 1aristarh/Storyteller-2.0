@@ -11,30 +11,36 @@ namespace Storyteller_2._0.Data.Services
             _context = context;
         }
 
-        public void Add(Comic comic)
+        public async Task AddAsync(Comic comic)
         {
-            throw new NotImplementedException();
+           await _context.Comics.AddAsync(comic);
+           await  _context.SaveChangesAsync();
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await _context.Comics.FirstOrDefaultAsync(n => n.Id == id);
+            _context.Comics.Remove(result);
+            _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Comic>> GetAll()
+        public async Task<IEnumerable<Comic>> GetAllAsync()
         {
             var result = await _context.Comics.ToListAsync();
             return result;
         }
 
-        public Comic GetbyId(int id)
+        public async Task<Comic> GetbyIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await _context.Comics.FirstOrDefaultAsync(n => n.Id == id);
+            return result;
         }
 
-        public Comic Update(int id, Comic newComic)
+        public async Task<Comic> UpdateAsync(int id, Comic newComic)
         {
-            throw new NotImplementedException();
+            _context.Update(newComic);
+                await _context.SaveChangesAsync();
+            return newComic;
         }
     }
 }

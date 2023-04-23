@@ -4,6 +4,7 @@
     { 
         Monochrome,
         Coloured,
-        PartialyColoured
+        SemiColoured,
+        Other
     }
 }

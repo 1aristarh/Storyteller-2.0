@@ -81,10 +81,14 @@ idk :hover {
 }
 
 .container {
-    max-width:200px;
+    align-content:center;
 }
 .title{
     padding-top:100px;
     padding-left:300px;
+}
+.mostrakardo
+{
+    width:500px
 }
 
