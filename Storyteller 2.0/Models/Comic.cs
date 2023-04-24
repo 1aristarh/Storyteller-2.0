@@ -27,5 +27,9 @@ namespace Storyteller_2._0.Models
         public int PageId { get; set; }
         [ForeignKey("PageId")]
         public List<Page> Pages { get; set; }
+        public Comic()
+        {
+
+        }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Storyteller_2._0.Data;
+using Storyteller_2._0.Data.Enum;
 using Storyteller_2._0.Data.Services;
 using Storyteller_2._0.Models;
 
@@ -24,9 +25,9 @@ namespace Storyteller_2._0.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Name,PageCount,Genre,Size,Description")]Comic comic)
+        public async Task<IActionResult> Create([Bind("Name,PageCount,Genre,Size,Description,Type")]Comic comic)
         {
-            if(!ModelState.IsValid)
+            if(ModelState.IsValid)
             {
                 return View(comic);
             }
@@ -48,7 +49,7 @@ namespace Storyteller_2._0.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(int id,[Bind("Id,Name,PageCount,Genre,Size,Description")] Comic comic)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 return View(comic);
             }
