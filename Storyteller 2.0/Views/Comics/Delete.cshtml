@@ -8,7 +8,7 @@
 <div class="row text">
     <div class="col-md-8 offset-2">
         <p>
-            <h1>Details for @Model.Name</h1>
+            <h1>Are you sure you want to delete @Model.Name</h1>
         </p>
         <div class="row">
             <div class="col-md-8 offset-2">
@@ -48,7 +48,10 @@
                         <span asp-validation-for="Type" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <a class="btn idk float-right" asp-action="Edit" asp-route-id="@Model.Id"> Edit </a>
+                    <form asp-action="DeleteConfirmed">
+                        <input type="hidden" asp-for="Id" />
+                        <input type="submit" value="Delete" class="btn idk float-right" />
+                    </form>
                         <a class="btn idk" asp-action="Index">Show All</a>
                     </div>
             </div>

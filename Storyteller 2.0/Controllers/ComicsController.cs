@@ -47,7 +47,7 @@ namespace Storyteller_2._0.Controllers
             return View(comicdetails);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(int id,[Bind("Id,Name,PageCount,Genre,Size,Description")] Comic comic)
+        public async Task<IActionResult> Edit(int id,[Bind("Id,Name,PageCount,Genre,Size,Description,Type")] Comic comic)
         {
             if (ModelState.IsValid)
             {
@@ -56,9 +56,16 @@ namespace Storyteller_2._0.Controllers
             await _service.UpdateAsync(id,comic);
             return RedirectToAction(nameof(Index));
         }
-        [HttpPost]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        
+        public async Task<IActionResult> Delete(int id)
         { var comicdetails = await _service.GetbyIdAsync(id);
+            if (comicdetails == null) return View("Not found");
+            return View(comicdetails);  
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeleteConfirmed(int id)             
+        {
+            var comicdetails = await _service.GetbyIdAsync(id);
             if (comicdetails == null) return View("Not found");
             await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));

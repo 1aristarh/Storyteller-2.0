@@ -21,7 +21,7 @@ namespace Storyteller_2._0.Data.Services
         {
             var result = await _context.Comics.FirstOrDefaultAsync(n => n.Id == id);
             _context.Comics.Remove(result);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Comic>> GetAllAsync()
