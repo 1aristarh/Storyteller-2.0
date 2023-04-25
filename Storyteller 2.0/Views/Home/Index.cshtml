@@ -1,19 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<header>
-    <div class="topnav">
-        <a class="active" href="Home">Home</a>
-        <a href="Comics">Comics</a>
-        <a href="Page">Pages</a>
-    </div>
-</header>
+
 
 <div class="title">
     <img class="img" src="https://cdn.discordapp.com/attachments/614163253114961923/1092143172982931506/title.png">
 </div>
 <div class="containerb">
-    <button type="button" class="btn idk">Log in</button>
-    <button type="button" class="btn idk">Register</button>
+    <a asp-controller="Comics" asp-action="Index" class="btn idk">Create</a>
+    
 </div>
 

@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="~/Storyteller_2._0.styles.css" asp-append-version="true" />
 </head>
 <body>
+    <header>
+        <div class="topnav">
+            <a asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-controller="Comics" asp-action="Index">Comics</a>
+            <a class="float-right"    asp-controller="Access" asp-action="LogOut">Log Out</a>
+        </div>
+    </header>
 
         <main role="main" class="pb-3">
             @RenderBody()
