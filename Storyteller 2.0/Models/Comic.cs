@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using Storyteller_2._0.Data.Enum;
+using Storyteller_2._0.Data.Base;
 
 namespace Storyteller_2._0.Models
 {
-    public class Comic
+    public class Comic:IEntityBase
     {
         [Key]
         public int Id { get; set; }
