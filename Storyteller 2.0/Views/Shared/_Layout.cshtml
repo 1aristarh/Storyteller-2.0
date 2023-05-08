@@ -10,11 +10,11 @@
 </head>
 <body>
     <header>
-        <div class="topnav">
+        <nav class="topnav">
             <a asp-controller="Home" asp-action="Index">Home</a>
             <a asp-controller="Comics" asp-action="Index">Comics</a>
-            <a class="float-right"    asp-controller="Access" asp-action="LogOut">Log Out</a>
-        </div>
+            <partial name="_Identity.cshtml" />
+        </nav>
     </header>
 
         <main role="main" class="pb-3">

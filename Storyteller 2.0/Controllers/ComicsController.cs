@@ -1,13 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Storyteller_2._0.Data;
 using Storyteller_2._0.Data.Enum;
 using Storyteller_2._0.Data.Services;
+using Storyteller_2._0.Data.Stoned;
 using Storyteller_2._0.Models;
+using System.Data;
 
 namespace Storyteller_2._0.Controllers
 {
+    [Authorize(Roles = UserRoles.Admin)]
     public class ComicsController : Controller
     {
         private readonly IComicsService _service;
@@ -15,6 +19,7 @@ namespace Storyteller_2._0.Controllers
         {
             _service = service;
         }
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var data =await _service.GetAllAsync();
@@ -34,6 +39,7 @@ namespace Storyteller_2._0.Controllers
            await _service.AddAsync(comic);
             return RedirectToAction(nameof(Index));  
         }
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var comicdetails = await _service.GetbyIdAsync(id);
