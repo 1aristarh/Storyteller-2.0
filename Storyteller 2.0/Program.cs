@@ -46,5 +46,6 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 AppDbSeed.Seed(app);
+await AppDbSeed.SeedUsersAndRolesAsync(app);
 
 app.Run();

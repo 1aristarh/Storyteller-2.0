@@ -14,12 +14,16 @@ namespace Storyteller_2._0.Data.VModels
 
         [Required]
         [DataType(DataType.Password)]
+        [RegularExpression(@"^(?=.*[!@#$%^&*()_+])(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$",
+        ErrorMessage = "The password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.")]
+
         public string Password { get; set; }
 
         [Display(Name = "Confirm password")]
         [Required(ErrorMessage = "Confirm password is required")]
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Passwords do not match")]
+        
         public string ConfirmPassword { get; set; }
     }
 }

@@ -80,9 +80,15 @@ namespace Storyteller_2._0.Controllers
             var newUserResponse = await _userManager.CreateAsync(newUser, registerVM.Password);
 
             if (newUserResponse.Succeeded)
+            {
                 await _userManager.AddToRoleAsync(newUser, UserRoles.User);
 
-            return View("RegisterCompleted");
+                return View("RegisterCompleted");
+            }
+            return View("AccessDenied");
+       
+
+
         }
 
         [HttpPost]
